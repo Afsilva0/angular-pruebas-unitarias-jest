@@ -181,6 +181,8 @@ To run the tests, you must modify the scripts in the **package.js** file as foll
 
 ```
 "test": "jest"
+"test-watch": "jest --watchAll",
+"test-coverage": "jest --coverage"
 ```
 
 ## Development server

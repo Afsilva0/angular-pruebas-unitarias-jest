@@ -1,0 +1,29 @@
+<p>calculate works!</p>
+
+<form [formGroup]="form" (submit)="operar()">
+  <div>
+    <label>Numero 1</label>
+    <input formControlName="num1" type="number" value="0" />
+  </div>
+
+  <div>
+    <label>Numero 2</label>
+    <input formControlName="num2" type="number" value="0" />
+  </div>
+
+  <div>
+    <label>Operación</label>
+    <select formControlName="operation">
+      <option value="add">Suma</option>
+      <option value="subtract">Resta</option>
+      <option value="multiply">Multiplicación</option>
+      <option value="divide">División</option>
+    </select>
+  </div>
+
+  <div class="result">
+    {{ result.value }}
+  </div>
+
+  <input type="submit" value="Calcular" />
+</form>
