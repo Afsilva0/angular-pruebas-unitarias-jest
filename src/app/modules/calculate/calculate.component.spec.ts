@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Observable, of, throwError } from 'rxjs';
 import { CalculateService } from 'src/app/core/service/calculate.service';
 
 import { CalculateComponent } from './calculate.component';
@@ -202,5 +203,29 @@ describe('CalculateComponent', () => {
     component.operar();
 
     expect(component.result.value).toEqual(resultExpect);
+  });
+
+  it('CalculateComponent method OnInit Observable success', () => {
+    const title = 'Esto es un titulo';
+    const spy1 = jest
+      .spyOn(service, 'getTitulo')
+      .mockImplementation(() => of(title));
+
+    component.ngOnInit();
+
+    expect(spy1).toHaveBeenCalled();
+    expect(component.titulo).toEqual(title);
+  });
+
+  it('CalculateComponent method OnInit Observable fail', () => {
+    const title = 'Hubo un error';
+    const spy1 = jest
+      .spyOn(service, 'getTitulo')
+      .mockImplementation(() => throwError(() => Error('ERROR')));
+
+    component.ngOnInit();
+
+    expect(spy1).toHaveBeenCalled();
+    expect(component.titulo).toEqual(title);
   });
 });

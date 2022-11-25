@@ -13,6 +13,8 @@ import { CalculateService } from 'src/app/core/service/calculate.service';
   styleUrls: ['./calculate.component.css'],
 })
 export class CalculateComponent implements OnInit {
+  titulo: string = '';
+
   form: FormGroup = new FormGroup({
     num1: new FormControl(0, [Validators.required, Validators.maxLength(10)]),
     num2: new FormControl(0, [Validators.required, Validators.maxLength(10)]),
@@ -22,7 +24,12 @@ export class CalculateComponent implements OnInit {
 
   constructor(private calculate: CalculateService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.calculate.getTitulo().subscribe({
+      next: (titulo) => (this.titulo = titulo),
+      error: () => (this.titulo = 'Hubo un error'),
+    });
+  }
 
   get num1(): AbstractControl {
     return this.form.get('num1')!;
@@ -62,14 +69,14 @@ export class CalculateComponent implements OnInit {
   }
 
   operar() {
-    const operaciones: any = {
-      add: () => this.add(),
-      subtract: () => this.subtract(),
-      multiply: () => this.multiply(),
-      divide: () => this.divide(),
-    };
+    const operaciones: Map<string, Function> = new Map([]);
 
-    operaciones[this.operation.value]();
+    operaciones.set('add', () => this.add());
+    operaciones.set('subtract', () => this.subtract());
+    operaciones.set('multiply', () => this.multiply());
+    operaciones.set('divide', () => this.divide());
+
+    operaciones.get(this.operation.value)!();
   }
 
   reset(): void {
