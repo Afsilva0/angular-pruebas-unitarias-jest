@@ -86,6 +86,56 @@ Then in an Angular CLI project run
 ng g @briebug/jest-schematic:add
 ```
 
+### Optional configuration
+
+The following attributes can be added to the **tsconfig.spec.json** file.
+
+Inside **compilerOptions** it is placed to prevent verbosity in the console.
+
+```
+ "esModuleInterop": true,
+```
+
+And in the same section to activate the jest dependency injection the following:
+Inside compilerOptions it is placed to prevent verbosity in the console.
+
+```
+"emitDecoratorMetadata": true
+```
+
+## Configuration of jest-preset-angular and coverage
+
+In your project root, create setup-jest.ts file with following contents:
+
+```
+import 'jest-preset-angular/setup-jest';
+```
+
+Add the following section:
+
+- to your root jest.config.js
+
+```
+// jest.config.js
+module.exports = {
+  preset: 'jest-preset-angular',
+  setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+  globalSetup: 'jest-preset-angular/global-setup',
+};
+```
+
+- or to your root package.json
+
+```
+{
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": ["<rootDir>/setup-jest.ts"],
+    "globalSetup": "jest-preset-angular/global-setup"
+  }
+}
+```
+
 - In the setup-jest.ts file you can add global mocks below the import.
   **import 'jest-preset-angular/setup-jest'**;
 
@@ -142,57 +192,7 @@ HTMLCanvasElement.prototype.getContext = <
 
 ```
 
-### optional configuration
-
-The following attributes can be added to the **tsconfig.spec.json** file.
-
-Inside **compilerOptions** it is placed to prevent verbosity in the console.
-
-```
- "esModuleInterop": true,
-```
-
-And in the same section to activate the jest dependency injection the following:
-Inside compilerOptions it is placed to prevent verbosity in the console.
-
-```
-"emitDecoratorMetadata": true
-```
-
-## Configuration of jest-preset-angular and coverage
-
-In your project root, create setup-jest.ts file with following contents:
-
-```
-import 'jest-preset-angular/setup-jest';
-```
-
-Add the following section:
-
-- to your root jest.config.js
-
-```
-// jest.config.js
-module.exports = {
-  preset: 'jest-preset-angular',
-  setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
-  globalSetup: 'jest-preset-angular/global-setup',
-};
-```
-
-- or to your root package.json
-
-```
-{
-  "jest": {
-    "preset": "jest-preset-angular",
-    "setupFilesAfterEnv": ["<rootDir>/setup-jest.ts"],
-    "globalSetup": "jest-preset-angular/global-setup"
-  }
-}
-```
-
-So that when executing the tests a coverage folder is created with its respective report, the following attributes must be added to the jest.config.js file:
+- So that when executing the tests a coverage folder is created with its respective report, the following attributes must be added to the jest.config.js file:
 
 ```
 collectCoverage: true
