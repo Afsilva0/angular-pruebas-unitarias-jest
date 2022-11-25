@@ -20,7 +20,7 @@ export class CalculateComponent implements OnInit {
     result: new FormControl(0, [Validators.required]),
   });
 
-  constructor(public calculate: CalculateService) {}
+  constructor(private calculate: CalculateService) {}
 
   ngOnInit(): void {}
 
@@ -70,7 +70,6 @@ export class CalculateComponent implements OnInit {
     };
 
     operaciones[this.operation.value]();
-    console.log(this.form.value);
   }
 
   reset(): void {

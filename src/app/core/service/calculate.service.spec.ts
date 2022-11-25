@@ -20,6 +20,17 @@ describe('CalculateService', () => {
   });
 
   it('CalculateService subtract', () => {
-    expect(service.subtract(7, 2)).toEqual(5);
+    const total = service.subtract(7, 2);
+    expect(total).toEqual(5);
+  });
+
+  it('CalculateService multiply', () => {
+    const total = service.multiply(5, 8);
+    expect(total).toEqual(40);
+  });
+
+  it('CalculateService divide', () => {
+    const total = service.divide(15, 3);
+    expect(total).toEqual(5);
   });
 });
