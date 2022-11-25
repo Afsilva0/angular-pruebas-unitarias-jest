@@ -1,11 +1,10 @@
-import { TestBed } from '@angular/core/testing';
-/*
-type CompilerOptions = Partial<{
-  providers: any;
-  useJit: boolean;
-  preservewhitespaces: boolean;
-}>;
+/* import { TestBed } from '@angular/core/testing';
 
+type CompilerOptions = Partial<{
+  providers: any[];
+  useJit: boolean;
+  preserveWhitespaces: boolean;
+}>;
 export type ConfigureFn = (testBed: typeof TestBed) => void;
 
 export const configureTests = (
@@ -13,13 +12,14 @@ export const configureTests = (
   compilerOptions: CompilerOptions = {}
 ) => {
   const compilerConfig: CompilerOptions = {
-    preservewhitespaces: false,
+    preserveWhitespaces: false,
     ...compilerOptions,
   };
 
-  const configureTestBed = TestBed.configureCompiler(compilerConfig);
-  configure(configureTestBed);
+  const configuredTestBed = TestBed.configureCompiler(compilerConfig);
 
-  return configureTestBed.compileComponents().then(() => configureTestBed);
+  configure(configuredTestBed);
+
+  return configuredTestBed.compileComponents().then(() => configuredTestBed);
 };
 */

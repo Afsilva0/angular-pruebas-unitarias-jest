@@ -13,4 +13,13 @@ describe('CalculateService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('CalculateService add', () => {
+    const total = service.add(1, 2);
+    expect(total).toEqual(3);
+  });
+
+  it('CalculateService subtract', () => {
+    expect(service.subtract(7, 2)).toEqual(5);
+  });
 });
