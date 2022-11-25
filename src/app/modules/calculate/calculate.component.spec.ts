@@ -38,13 +38,13 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
 
-    expect(num1).toEqual(component.num1.value);
-    expect(num2).toEqual(component.num2.value);
+    expect(component.num1.value).toEqual(num1);
+    expect(component.num2.value).toEqual(num2);
 
     component.add();
 
     expect(spy1).toHaveBeenCalled();
-    expect(resultExpect).toEqual(component.result.value);
+    expect(component.result.value).toEqual(resultExpect);
   });
 
   it('CalculateComponent method subtract', () => {
@@ -58,13 +58,13 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
 
-    expect(num1).toEqual(component.num1.value);
-    expect(num2).toEqual(component.num2.value);
+    expect(component.num1.value).toEqual(num1);
+    expect(component.num2.value).toEqual(num2);
 
     component.subtract();
 
     expect(spy1).toHaveBeenCalled();
-    expect(resultExpect).toEqual(component.result.value);
+    expect(component.result.value).toEqual(resultExpect);
   });
 
   it('CalculateComponent method multiply', () => {
@@ -78,13 +78,13 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
 
-    expect(num1).toEqual(component.num1.value);
-    expect(num2).toEqual(component.num2.value);
+    expect(component.num1.value).toEqual(num1);
+    expect(component.num2.value).toEqual(num2);
 
     component.multiply();
 
     expect(spy1).toHaveBeenCalled();
-    expect(resultExpect).toEqual(component.result.value);
+    expect(component.result.value).toEqual(resultExpect);
   });
 
   it('CalculateComponent method divide', () => {
@@ -98,13 +98,13 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
 
-    expect(num1).toEqual(component.num1.value);
-    expect(num2).toEqual(component.num2.value);
+    expect(component.num1.value).toEqual(num1);
+    expect(component.num2.value).toEqual(num2);
 
     component.divide();
 
     expect(spy1).toHaveBeenCalled();
-    expect(resultExpect).toEqual(component.result.value);
+    expect(component.result.value).toEqual(resultExpect);
   });
 
   it('CalculateComponent method reset', () => {
@@ -117,15 +117,15 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.result.setValue(result);
 
-    expect(num1).toEqual(component.num1.value);
-    expect(num2).toEqual(component.num2.value);
-    expect(result).toEqual(result);
+    expect(component.num1.value).toEqual(num1);
+    expect(component.num2.value).toEqual(num2);
+    expect(component.result.value).toEqual(result);
 
     component.reset();
 
-    expect(resultExpect).toEqual(component.num1.value);
-    expect(resultExpect).toEqual(component.num2.value);
-    expect(resultExpect).toEqual(component.result.value);
+    expect(component.num1.value).toEqual(resultExpect);
+    expect(component.num2.value).toEqual(resultExpect);
+    expect(component.result.value).toEqual(resultExpect);
   });
 
   it('CalculateComponent method operar whit add', () => {
@@ -138,13 +138,13 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.operation.setValue(operation);
 
-    expect(num1).toEqual(component.num1.value);
-    expect(num2).toEqual(component.num2.value);
-    expect(operation).toEqual(component.operation.value);
+    expect(component.num1.value).toEqual(num1);
+    expect(component.num2.value).toEqual(num2);
+    expect(component.operation.value).toEqual(operation);
 
     component.operar();
 
-    expect(resultExpect).toEqual(component.result.value);
+    expect(component.result.value).toEqual(resultExpect);
   });
 
   it('CalculateComponent method operar whit subtract', () => {
@@ -157,13 +157,13 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.operation.setValue(operation);
 
-    expect(num1).toEqual(component.num1.value);
-    expect(num2).toEqual(component.num2.value);
-    expect(operation).toEqual(component.operation.value);
+    expect(component.num1.value).toEqual(num1);
+    expect(component.num2.value).toEqual(num2);
+    expect(component.operation.value).toEqual(operation);
 
     component.operar();
 
-    expect(resultExpect).toEqual(component.result.value);
+    expect(component.result.value).toEqual(resultExpect);
   });
 
   it('CalculateComponent method operar whit multiply', () => {
@@ -176,13 +176,13 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.operation.setValue(operation);
 
-    expect(num1).toEqual(component.num1.value);
-    expect(num2).toEqual(component.num2.value);
-    expect(operation).toEqual(component.operation.value);
+    expect(component.num1.value).toEqual(num1);
+    expect(component.num2.value).toEqual(num2);
+    expect(component.operation.value).toEqual(operation);
 
     component.operar();
 
-    expect(resultExpect).toEqual(component.result.value);
+    expect(component.result.value).toEqual(resultExpect);
   });
 
   it('CalculateComponent method operar whit divide', () => {
@@ -195,12 +195,12 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.operation.setValue(operation);
 
-    expect(num1).toEqual(component.num1.value);
-    expect(num2).toEqual(component.num2.value);
-    expect(operation).toEqual(component.operation.value);
+    expect(component.num1.value).toEqual(num1);
+    expect(component.num2.value).toEqual(num2);
+    expect(component.operation.value).toEqual(operation);
 
     component.operar();
 
-    expect(resultExpect).toEqual(component.result.value);
+    expect(component.result.value).toEqual(resultExpect);
   });
 });
