@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Observable, of, throwError } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { CalculateService } from 'src/app/core/service/calculate.service';
 
 import { CalculateComponent } from './calculate.component';
@@ -28,6 +28,27 @@ describe('CalculateComponent', () => {
     expect(component).toBeInstanceOf(CalculateComponent);
   });
 
+  it('Calulate setValue and getValue num1', () => {
+    const num = 5;
+    component.num1.setValue(num);
+
+    expect(component.num1.value).toBe(num);
+  });
+
+  it('Calulate setValue and getValue num2', () => {
+    const num = 8;
+    component.num2.setValue(num);
+
+    expect(component.num2.value).toBe(num);
+  });
+
+  it('Calulate setValue and getValue result', () => {
+    const result = 8;
+    component.result.setValue(result);
+
+    expect(component.result.value).toBe(result);
+  });
+
   it('CalculateComponent method add', () => {
     const num1 = 1;
     const num2 = 2;
@@ -38,9 +59,6 @@ describe('CalculateComponent', () => {
 
     component.num1.setValue(num1);
     component.num2.setValue(num2);
-
-    expect(component.num1.value).toBe(num1);
-    expect(component.num2.value).toBe(num2);
 
     component.add();
 
@@ -59,9 +77,6 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
 
-    expect(component.num1.value).toBe(num1);
-    expect(component.num2.value).toBe(num2);
-
     component.subtract();
 
     expect(spy1).toHaveBeenCalled();
@@ -78,9 +93,6 @@ describe('CalculateComponent', () => {
 
     component.num1.setValue(num1);
     component.num2.setValue(num2);
-
-    expect(component.num1.value).toBe(num1);
-    expect(component.num2.value).toBe(num2);
 
     component.multiply();
 
@@ -99,9 +111,6 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
 
-    expect(component.num1.value).toBe(num1);
-    expect(component.num2.value).toBe(num2);
-
     component.divide();
 
     expect(spy1).toHaveBeenCalled();
@@ -117,10 +126,6 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
     component.result.setValue(result);
-
-    expect(component.num1.value).toBe(num1);
-    expect(component.num2.value).toBe(num2);
-    expect(component.result.value).toBe(result);
 
     component.reset();
 
@@ -139,10 +144,6 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.operation.setValue(operation);
 
-    expect(component.num1.value).toBe(num1);
-    expect(component.num2.value).toBe(num2);
-    expect(component.operation.value).toBe(operation);
-
     component.operar();
 
     expect(component.result.value).toBe(resultExpect);
@@ -157,10 +158,6 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
     component.operation.setValue(operation);
-
-    expect(component.num1.value).toBe(num1);
-    expect(component.num2.value).toBe(num2);
-    expect(component.operation.value).toBe(operation);
 
     component.operar();
 
@@ -177,10 +174,6 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.operation.setValue(operation);
 
-    expect(component.num1.value).toBe(num1);
-    expect(component.num2.value).toBe(num2);
-    expect(component.operation.value).toBe(operation);
-
     component.operar();
 
     expect(component.result.value).toBe(resultExpect);
@@ -195,10 +188,6 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
     component.operation.setValue(operation);
-
-    expect(component.num1.value).toBe(num1);
-    expect(component.num2.value).toBe(num2);
-    expect(component.operation.value).toBe(operation);
 
     component.operar();
 

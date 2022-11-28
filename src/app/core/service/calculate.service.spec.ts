@@ -33,4 +33,21 @@ describe('CalculateService', () => {
     const total = service.divide(15, 3);
     expect(total).toBe(5);
   });
+
+  /*
+   * Si se utiliza xit se desabilita esta prueba
+   * De la misma forma si se usa xdescribe se desabilita
+   * todo los test que estan en el describe
+   */
+  xit('Prueba disable it', () => {});
+
+  /*
+   * Si se utilixa it.only o fit solo se lanzara ese test
+   * Tambien exite los fdescribe y describe.only
+   */
+
+  /* 
+  it.only('Se ejecutara solo este test', () => {});
+  fit('Se ejecutara solo este test', () => {});
+  */
 });
