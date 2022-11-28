@@ -39,13 +39,13 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
 
-    expect(component.num1.value).toEqual(num1);
-    expect(component.num2.value).toEqual(num2);
+    expect(component.num1.value).toBe(num1);
+    expect(component.num2.value).toBe(num2);
 
     component.add();
 
     expect(spy1).toHaveBeenCalled();
-    expect(component.result.value).toEqual(resultExpect);
+    expect(component.result.value).toBe(resultExpect);
   });
 
   it('CalculateComponent method subtract', () => {
@@ -59,13 +59,13 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
 
-    expect(component.num1.value).toEqual(num1);
-    expect(component.num2.value).toEqual(num2);
+    expect(component.num1.value).toBe(num1);
+    expect(component.num2.value).toBe(num2);
 
     component.subtract();
 
     expect(spy1).toHaveBeenCalled();
-    expect(component.result.value).toEqual(resultExpect);
+    expect(component.result.value).toBe(resultExpect);
   });
 
   it('CalculateComponent method multiply', () => {
@@ -79,13 +79,13 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
 
-    expect(component.num1.value).toEqual(num1);
-    expect(component.num2.value).toEqual(num2);
+    expect(component.num1.value).toBe(num1);
+    expect(component.num2.value).toBe(num2);
 
     component.multiply();
 
     expect(spy1).toHaveBeenCalled();
-    expect(component.result.value).toEqual(resultExpect);
+    expect(component.result.value).toBe(resultExpect);
   });
 
   it('CalculateComponent method divide', () => {
@@ -99,13 +99,13 @@ describe('CalculateComponent', () => {
     component.num1.setValue(num1);
     component.num2.setValue(num2);
 
-    expect(component.num1.value).toEqual(num1);
-    expect(component.num2.value).toEqual(num2);
+    expect(component.num1.value).toBe(num1);
+    expect(component.num2.value).toBe(num2);
 
     component.divide();
 
     expect(spy1).toHaveBeenCalled();
-    expect(component.result.value).toEqual(resultExpect);
+    expect(component.result.value).toBe(resultExpect);
   });
 
   it('CalculateComponent method reset', () => {
@@ -118,15 +118,15 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.result.setValue(result);
 
-    expect(component.num1.value).toEqual(num1);
-    expect(component.num2.value).toEqual(num2);
-    expect(component.result.value).toEqual(result);
+    expect(component.num1.value).toBe(num1);
+    expect(component.num2.value).toBe(num2);
+    expect(component.result.value).toBe(result);
 
     component.reset();
 
-    expect(component.num1.value).toEqual(resultExpect);
-    expect(component.num2.value).toEqual(resultExpect);
-    expect(component.result.value).toEqual(resultExpect);
+    expect(component.num1.value).toBe(resultExpect);
+    expect(component.num2.value).toBe(resultExpect);
+    expect(component.result.value).toBe(resultExpect);
   });
 
   it('CalculateComponent method operar whit add', () => {
@@ -139,13 +139,13 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.operation.setValue(operation);
 
-    expect(component.num1.value).toEqual(num1);
-    expect(component.num2.value).toEqual(num2);
-    expect(component.operation.value).toEqual(operation);
+    expect(component.num1.value).toBe(num1);
+    expect(component.num2.value).toBe(num2);
+    expect(component.operation.value).toBe(operation);
 
     component.operar();
 
-    expect(component.result.value).toEqual(resultExpect);
+    expect(component.result.value).toBe(resultExpect);
   });
 
   it('CalculateComponent method operar whit subtract', () => {
@@ -158,13 +158,13 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.operation.setValue(operation);
 
-    expect(component.num1.value).toEqual(num1);
-    expect(component.num2.value).toEqual(num2);
-    expect(component.operation.value).toEqual(operation);
+    expect(component.num1.value).toBe(num1);
+    expect(component.num2.value).toBe(num2);
+    expect(component.operation.value).toBe(operation);
 
     component.operar();
 
-    expect(component.result.value).toEqual(resultExpect);
+    expect(component.result.value).toBe(resultExpect);
   });
 
   it('CalculateComponent method operar whit multiply', () => {
@@ -177,13 +177,13 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.operation.setValue(operation);
 
-    expect(component.num1.value).toEqual(num1);
-    expect(component.num2.value).toEqual(num2);
-    expect(component.operation.value).toEqual(operation);
+    expect(component.num1.value).toBe(num1);
+    expect(component.num2.value).toBe(num2);
+    expect(component.operation.value).toBe(operation);
 
     component.operar();
 
-    expect(component.result.value).toEqual(resultExpect);
+    expect(component.result.value).toBe(resultExpect);
   });
 
   it('CalculateComponent method operar whit divide', () => {
@@ -196,13 +196,13 @@ describe('CalculateComponent', () => {
     component.num2.setValue(num2);
     component.operation.setValue(operation);
 
-    expect(component.num1.value).toEqual(num1);
-    expect(component.num2.value).toEqual(num2);
-    expect(component.operation.value).toEqual(operation);
+    expect(component.num1.value).toBe(num1);
+    expect(component.num2.value).toBe(num2);
+    expect(component.operation.value).toBe(operation);
 
     component.operar();
 
-    expect(component.result.value).toEqual(resultExpect);
+    expect(component.result.value).toBe(resultExpect);
   });
 
   it('CalculateComponent method OnInit Observable success', () => {
@@ -214,7 +214,7 @@ describe('CalculateComponent', () => {
     component.ngOnInit();
 
     expect(spy1).toHaveBeenCalled();
-    expect(component.titulo).toEqual(title);
+    expect(component.titulo).toBe(title);
   });
 
   it('CalculateComponent method OnInit Observable fail', () => {
@@ -226,6 +226,6 @@ describe('CalculateComponent', () => {
     component.ngOnInit();
 
     expect(spy1).toHaveBeenCalled();
-    expect(component.titulo).toEqual(title);
+    expect(component.titulo).toBe(title);
   });
 });
